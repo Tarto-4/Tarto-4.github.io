@@ -29,9 +29,9 @@
 - [🙏 Acknowledgements](#acknowledgements)
 - [📝 License](#license)
 
-# 📖 Desktop-Portfolio <a name="about-project"></a>
+# 📖 My-Portfolio <a name="about-project"></a>
 
-**Desktop-Portfolio** is a simple project. It is the first project created as part of Microverse curriculum.
+**My-Portfolio** is a simple project. It is the first project created as part of Microverse curriculum.
 
 ## 🛠 Built With <a name="built-with"></a>
 
