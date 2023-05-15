@@ -49,7 +49,7 @@
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
-- [Live Demo Link](http://127.0.0.1:5500/)
+- [Live Demo Link](https://tarto-4.github.io/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
