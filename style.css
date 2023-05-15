@@ -75,10 +75,6 @@ body {
   gap: 1.2rem;
 }
 
-.main h1:hover {
-  transform: translate(190px, -8px);
-}
-
 #headline-primary {
   font-family: 'Crete Round', sans-serif;
   font-style: normal;
