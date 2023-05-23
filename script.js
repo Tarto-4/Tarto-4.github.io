@@ -14,4 +14,3 @@ navLinks.forEach((link) => {
     headerElement.classList.remove('nav-open');
   });
 });
-
