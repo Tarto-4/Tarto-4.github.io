@@ -248,12 +248,12 @@ cardWorkText.appendChild(action);
 
 btnSmall = document.createElement('button');
 btnSmall.classList = 'btn-sm';
-btnSmall.innerHTML = `<a href="${projectData[7].demoLink}">See Live <img src="img/icon-see-live.svg" alt="See Live Icon Image"/></a>`;
+btnSmall.innerHTML = `<a href="${projectData[7].demoLink}">See Live <img src="img/see-live.svg" alt="See Live Icon Image"/></a>`;
 action.appendChild(btnSmall);
 
 btnSmall = document.createElement('button');
 btnSmall.classList = 'btn-sm';
-btnSmall.innerHTML = `<a href="${projectData[7].source}">See Source<img src="img/icon-github-see-source.svg" alt="Github Icon Image"/> </a>`;
+btnSmall.innerHTML = `<a href="${projectData[7].source}">See Source<img src="img/github-see-source.svg" alt="Github Icon Image"/> </a>`;
 action.appendChild(btnSmall);
 
 let overlay = document.createElement('div');
