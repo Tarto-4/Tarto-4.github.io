@@ -229,7 +229,7 @@ popUp.appendChild(cardWorks);
 
 const img = document.createElement('img');
 img.classList = 'card-work-img';
-img.src = projectData[7].imageSrc;
+img.src = 'img/snapshoot-portfolio.svg';
 img.alt = 'Image of project work';
 cardWorks.appendChild(img);
 
