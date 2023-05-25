@@ -190,6 +190,16 @@ body {
   margin-bottom: 2.4rem;
 }
 
+#error-message {
+  font-family: 'Poppins', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1.6rem;
+  line-height: 2.4rem;
+  color: #ff0000;
+  margin-bottom: 2.4rem;
+}
+
 .social-icons-lists {
   list-style: none;
   display: flex;
