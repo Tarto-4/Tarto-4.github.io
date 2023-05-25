@@ -184,18 +184,39 @@ alt="Hamburger close menu icon"
                     I'm always interested in hearing about new projects, so if you'd like to chat please get in touch.
                 </h2>
             </div>
-            <form class="contact-form padding-left-right" action="https://formspree.io/f/xayvglaa" method="post">
-                <fieldset class="contact-group">
-                    <label for="full_name"></label>
-                    <input type="text" id="full_name" name="user_full_name" placeholder="Full name" required maxlength="30" />
-                    <label for="email"></label>
-                    <input type="email" id="user_email" name="user_email" placeholder="Email address" required />
-                    <label for="message"></label>
-                    <textarea id="message" name="user_message" placeholder="Enter text here" required maxlength="500"></textarea>
-                </fieldset>
-                <input class="btn-form" type="submit" name="submit" value="Get in touch" />
-                <span class="error" aria-live="polite"></span>
-            </form>
+           <form
+          action="https://formspree.io/f/xzbqorra"
+          method="post"
+          class="contact-form"
+        >
+          <input
+            class="contact-input"
+            type="text"
+            maxlength="30"
+            name="user-name"
+            id="user-name"
+            placeholder="Lorem Ipsum"
+            required
+          />
+          <input
+            class="contact-input"
+            type="email"
+            name="user-email"
+            id="user-email"
+            placeholder="Loremipsum@gmail.com"
+            required
+          />
+          <textarea
+            class="contact-message"
+            name="user-message"
+            id="user-message"
+            maxlength="500"
+            placeholder="Write your message here"
+            required
+          <!-- ></textarea>
+          <button class="contact-btn" type="submit">Get in touch</button>
+          <span id="error-message"></span> -->
+        </form>
         </div>
 
         <div class="footer-social-icons">
