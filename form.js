@@ -1,6 +1,6 @@
 //  Lower case E-mail validation
 
-const form = document.querySelector('form');
+const form = document.querySelector('btn-form');
 const email = document.getElementById('email');
 const errorMessage = document.querySelector('.error');
 
