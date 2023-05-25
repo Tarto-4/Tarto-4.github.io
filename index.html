@@ -184,22 +184,19 @@ alt="Hamburger close menu icon"
                     I'm always interested in hearing about new projects, so if you'd like to chat please get in touch.
                 </h2>
             </div>
-           <form
-          action="https://formspree.io/f/xzbqorra"
-          method="post"
-          class="contact-form"
-        >
+           <form class="contact-form padding-left-right"  action="https://formspree.io/f/xzbqorra" method="post">
+            <fieldset class="contact-group">
+                <label for="full_name"></label>
           <input
-            class="contact-input"
             type="text"
             maxlength="30"
             name="user-name"
             id="user-name"
-            placeholder="Lorem Ipsum"
+            placeholder="Full name"
             required
           />
+          <label for="email"></label>
           <input
-            class="contact-input"
             type="email"
             name="user-email"
             id="user-email"
@@ -207,15 +204,14 @@ alt="Hamburger close menu icon"
             required
           />
           <textarea
-            class="contact-message"
             name="user-message"
             id="user-message"
             maxlength="500"
             placeholder="Write your message here"
-            required
-          <!-- ></textarea>
+            required >
+        </textarea>
           <button class="contact-btn" type="submit">Get in touch</button>
-          <span id="error-message"></span> -->
+          <span id="error-message"></span>
         </form>
         </div>
 
