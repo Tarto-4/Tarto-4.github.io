@@ -1,7 +1,7 @@
 //  Lower case E-mail validation
 
 const error = document.querySelector('.error');
-const form = document.querySelector('.contact-form padding-left-right');
+const form = document.querySelector('.contact-form');
 const email = document.getElementById('user_email');
 const errorMessage = 'Please write your email address in lower case';
 
