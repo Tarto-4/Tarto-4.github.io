@@ -14,5 +14,9 @@ form.addEventListener('submit', (event) => {
   } else {
     error.innerText = '';
     form.submit();
+
+    // Style error msg
+    error.style.color = "#ff0000";
+    error.style.width = '100%';
   }
 });
