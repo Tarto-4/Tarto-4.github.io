@@ -1,5 +1,3 @@
-// VALIDATIONA FORM
-
 const error = document.getElementById('error-message');
 const form = document.querySelector('.contact-form');
 const userEmail = document.getElementById('user-email');
