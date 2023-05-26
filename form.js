@@ -11,6 +11,5 @@ form.addEventListener('submit', (event) => {
     error.innerText = errorMessage;
   } else {
     error.innerText = '';
-    form.submit();
   }
 });
