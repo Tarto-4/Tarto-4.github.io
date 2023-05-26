@@ -284,3 +284,30 @@ for (let i = 0; i < btnShowPopUp.length; i += 1) {
   btnClosePopUp.addEventListener('click', closePopUp);
   overlay.addEventListener('click', closePopUp);
 }
+
+// LOCAL STORAGE
+const userName = document.getElementById('user-name');
+const userMessage = document.getElementById('user-message');
+const contactDetails = {
+  fullName: String,
+  email: String,
+  message: String,
+};
+
+form.addEventListener('input', () => {
+  contactDetails.fullName = userName.value;
+  contactDetails.email = userEmail.value;
+  contactDetails.message = userMessage.value;
+
+  localStorage.setItem('contactDetails', JSON.stringify(contactDetails));
+});
+
+window.onload = () => {
+  const contactData = JSON.parse(localStorage.getItem('contactDetails'));
+
+  if (contactData) {
+    userName.value = contactData.fullName;
+    userEmail.value = contactData.email;
+    userMessage.value = contactData.message;
+  }
+};
