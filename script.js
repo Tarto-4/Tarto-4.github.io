@@ -15,7 +15,7 @@ navLinks.forEach((link) => {
   });
 });
 
-// VALIDATIONA FORM
+// VALIDATION FORM
 
 const error = document.getElementById('error-message');
 const form = document.querySelector('.contact-form');
