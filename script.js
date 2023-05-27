@@ -86,8 +86,8 @@ const projectData = [{
   badge2: 'Bootstrap',
   badge3: 'Ruby on Rails',
   description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essent ",
-  demoLink: 'https://tarto-4.github.io/',
-  source: 'https://github.com/Tarto-4/Tarto-4.github.io',
+  demoLink: 'https://johnadibe.github.io',
+  source: 'https://github.com/Johnadibe/Johnadibe.github.io',
 
 },
 ];
@@ -248,12 +248,12 @@ cardWorkText.appendChild(action);
 
 btnSmall = document.createElement('button');
 btnSmall.classList = 'btn-sm';
-btnSmall.innerHTML = `<a href="${projectData[7].demoLink}">See Live <img src="img/see-live.svg" alt="See Live Icon Image"/></a>`;
+btnSmall.innerHTML = `<a href="${projectData[7].demoLink}">See Live <img src="img/icon-see-live.svg" alt="See Live Icon Image"/></a>`;
 action.appendChild(btnSmall);
 
 btnSmall = document.createElement('button');
 btnSmall.classList = 'btn-sm';
-btnSmall.innerHTML = `<a href="${projectData[7].source}">See Source<img src="img/github-see-source.svg" alt="Github Icon Image"/> </a>`;
+btnSmall.innerHTML = `<a href="${projectData[7].source}">See Source<img src="img/icon-github-see-source.svg" alt="Github Icon Image"/> </a>`;
 action.appendChild(btnSmall);
 
 let overlay = document.createElement('div');
@@ -284,30 +284,3 @@ for (let i = 0; i < btnShowPopUp.length; i += 1) {
   btnClosePopUp.addEventListener('click', closePopUp);
   overlay.addEventListener('click', closePopUp);
 }
-
-// LOCAL STORAGE
-const userName = document.getElementById('user-name');
-const userMessage = document.getElementById('user-message');
-const contactDetails = {
-  fullName: String,
-  email: String,
-  message: String,
-};
-
-form.addEventListener('input', () => {
-  contactDetails.fullName = userName.value;
-  contactDetails.user-email = email.value;
-  contactDetails.message = userMessage.value;
-
-  localStorage.setItem('contactDetails', JSON.stringify(contactDetails));
-});
-
-window.onload = () => {
-  const contactData = JSON.parse(localStorage.getItem('contactDetails'));
-
-  if (contactData) {
-    userName.value = contactData.fullName;
-    user-email.value = contactData.email;
-    userMessage.value = contactData.message;
-  }
-};
