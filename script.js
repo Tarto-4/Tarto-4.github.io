@@ -296,7 +296,7 @@ const contactDetails = {
 
 form.addEventListener('input', () => {
   contactDetails.fullName = userName.value;
-  contactDetails.email = userEmail.value;
+  contactDetails.email = email.value;
   contactDetails.message = userMessage.value;
 
   localStorage.setItem('contactDetails', JSON.stringify(contactDetails));
