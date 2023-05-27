@@ -1,16 +1,18 @@
-const error = document.getElementById('error-message');
-const form = document.querySelector('.contact-form');
-const userEmail = document.getElementById('user-email');
-const errorMessage = 'Please write your email address in lower case';
-// CODE
+//  Lower case E-mail validation
+
+const form = document.querySelector('form');
+const email = document.getElementById('email');
+const errorMessage = document.querySelector('.error');
+
+function showError() {
+  if (email.value.trim() !== email.value.trim().toLowerCase()) {
+    errorMessage.textContent = 'Email should be in lower case. Your form is not sent.';
+  }
+}
+
 form.addEventListener('submit', (event) => {
-  // preventing from submittion
-  event.preventDefault();
-  const userInput = userEmail.value;
-  if (userInput !== userInput.toLowerCase()) {
-    error.innerText = errorMessage;
-  } else {
-    error.innerText = '';
-    form.submit();
+  if (email.value.trim() !== email.value.trim().toLowerCase()) {
+    showError();
+    event.preventDefault();
   }
 });
