@@ -158,6 +158,14 @@ Your working browser
 - Twitter: [@twitterhandle](https://twitter.com/THATOMongwe4)
 - LinkedIn: [LinkedIn](https://www.linkedin.com/in/thato-mongwe-08a84a23a/)
 
+👤 **Author1**
+
+- Emmanuel Kipngeno
+
+- GitHub: [@githubhandle](https://github.com/kkmanuu)
+- Twitter: [@twitterhandle](https://twitter.com/kkmanuu)
+- LinkedIn: [LinkedIn](https://www.linkedin.com/in/emmanuel-kipngeno-879370242/)
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## 🔭 Future Features <a name="future-features"></a>
