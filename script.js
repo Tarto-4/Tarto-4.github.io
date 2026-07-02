@@ -15,92 +15,87 @@ navLinks.forEach((link) => {
   });
 });
 
-// Works or Project and Pop up Data
+// Works / Projects data. The first entry is the large featured project,
+// the rest are rendered in the grid below it. Each entry carries its own
+// details so the pop-up can show the project the visitor actually clicked.
 
-const projectData = [{
-  imageSrc: 'img/post-stories.svg',
-  title: 'Multi-Post Stories',
-  description: 'A daily selection of privately personalized reads; no accounts or sign-ups required. has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a standard dummy text',
-  badge1: 'css',
-  badge2: 'Html',
-  badge3: 'bootstrap',
-  badge4: 'Ruby',
-},
-{
-  title: 'Profesional Art Printing Data',
-  description: 'A daily selection of privately personalized reads; no accounts or sign-ups required. has been the industry\'s standard',
-  badge1: 'html',
-  badge2: 'bootstrap',
-  badge3: 'Ruby',
-  id: 'bg-1',
-},
-
-{
-  title: 'Profesional Art Printing Data',
-  description: 'A daily selection of privately personalized reads; no accounts or sign-ups required. has been the industry\'s standard',
-  badge1: 'html',
-  badge2: 'bootstrap',
-  badge3: 'Ruby',
-  id: 'bg-2',
-},
-
-{
-  title: 'Profesional Art Printing Data',
-  description: 'A daily selection of privately personalized reads; no accounts or sign-ups required. has been the industry\'s standard',
-  badge1: 'html',
-  badge2: 'bootstrap',
-  badge3: 'Ruby',
-  id: 'bg-3',
-},
-
-{
-  title: 'Profesional Art Printing Data',
-  description: 'A daily selection of privately personalized reads; no accounts or sign-ups required. has been the industry\'s standard',
-  badge1: 'html',
-  badge2: 'bootstrap',
-  badge3: 'Ruby',
-  id: 'bg-4',
-},
-
-{
-  title: 'Profesional Art Printing Data',
-  description: 'A daily selection of privately personalized reads; no accounts or sign-ups required. has been the industry\'s standard',
-  badge1: 'html',
-  badge2: 'bootstrap',
-  badge3: 'Ruby',
-  id: 'bg-5',
-},
-
-{
-  title: 'Profesional Art Printing Data',
-  description: 'A daily selection of privately personalized reads; no accounts or sign-ups required. has been the industry\'s standard',
-  badge1: 'html',
-  badge2: 'bootstrap',
-  badge3: 'Ruby',
-  id: 'bg-6',
-},
-{
-  imageSrc: 'img/snapshoot-portfolio.svg',
-  title: 'Multi Post Stories',
-  badge1: 'Html',
-  badge2: 'Bootstrap',
-  badge3: 'Ruby on Rails',
-  description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essent ",
-  demoLink: 'https://johnadibe.github.io',
-  source: 'https://github.com/Johnadibe/Johnadibe.github.io',
-
-},
+const projectData = [
+  {
+    imageSrc: 'img/post-stories.svg',
+    title: 'Tukopamoja',
+    description:
+      'A production-ready multiplayer game platform centred on live quiz experiences. Hosts create quiz templates and run sessions from a web dashboard while players join by PIN or QR code for real-time, synchronised gameplay with live leaderboards.',
+    badges: ['TypeScript', 'Next.js', 'React Native', 'Supabase'],
+    demoLink: '',
+    source: 'https://github.com/Tarto-4/Tukopamoja',
+  },
+  {
+    imageSrc: 'img/desktop-1.svg',
+    title: 'PowerTrader AI',
+    description:
+      'A fully automated crypto trading system that pairs a custom price-prediction AI with a structured, tiered dollar-cost-averaging strategy. It analyses historical price patterns across multiple timeframes to generate hands-off buy and sell signals.',
+    badges: ['Python', 'Machine Learning', 'Robinhood API'],
+    demoLink: 'https://powertrader.net',
+    source: 'https://github.com/Tarto-4/PowerTrader_AI',
+    id: 'bg-1',
+  },
+  {
+    imageSrc: 'img/desktop-2.svg',
+    title: 'Personal Portfolio',
+    description:
+      'This responsive portfolio website, hand-built to showcase my projects and experience. It features a mobile-first layout, an accessible contact form and an interactive project pop-up, all without a framework.',
+    badges: ['HTML', 'CSS', 'JavaScript'],
+    demoLink: 'https://tarto-4.github.io/',
+    source: 'https://github.com/Tarto-4/Tarto-4.github.io',
+    id: 'bg-2',
+  },
+  {
+    imageSrc: 'img/desktop-3.svg',
+    title: 'Simple Interest Calculator',
+    description:
+      'A command-line tool that calculates simple interest from a principal, annual rate and time period. Built as a hands-on exercise in shell scripting, Git workflows and open-source project structure.',
+    badges: ['Shell', 'Bash', 'Git'],
+    demoLink: '',
+    source: 'https://github.com/Tarto-4/github-final-project',
+    id: 'bg-3',
+  },
+  {
+    imageSrc: 'img/desktop-1.svg',
+    title: 'Low-Level Programming',
+    description:
+      'A collection of C programs exploring low-level programming concepts: pointers, memory management, data structures and how software talks to hardware. Part of the ALX Software Engineering curriculum.',
+    badges: ['C', 'Data Structures', 'Algorithms'],
+    demoLink: '',
+    source: 'https://github.com/Tarto-4/alx-low_level_programming',
+    id: 'bg-4',
+  },
 ];
 
-// Works Section
-
 const worksSection = document.querySelector('.works-section');
+
+// Helper: build a badge list from a project's badges array
+const buildBadgeList = (badges, className) => {
+  const list = document.createElement('ul');
+  list.classList = className;
+  badges.forEach((badge) => {
+    const li = document.createElement('li');
+    li.innerText = badge;
+    list.appendChild(li);
+  });
+  return list;
+};
+
+// Featured project (first entry)
+
+const featured = projectData[0];
+
 const postStories = document.createElement('div');
 postStories.classList = 'post-stories';
 worksSection.appendChild(postStories);
 
 const image = document.createElement('img');
-image.src = projectData[0].imageSrc;
+image.src = featured.imageSrc;
+image.alt = `${featured.title} project preview`;
 postStories.appendChild(image);
 
 const postTextBox = document.createElement('div');
@@ -109,46 +104,34 @@ postStories.appendChild(postTextBox);
 
 const postStoriesHeading = document.createElement('h3');
 postStoriesHeading.classList = 'post-stories-heading';
-postStoriesHeading.innerText = projectData[0].title;
+postStoriesHeading.innerText = featured.title;
 postTextBox.appendChild(postStoriesHeading);
 
 const postStoriesDescription = document.createElement('p');
 postStoriesDescription.classList = 'post-stories-description';
-postStoriesDescription.innerText = projectData[0].description;
+postStoriesDescription.innerText = featured.description;
 postTextBox.appendChild(postStoriesDescription);
 
-const worksList = document.createElement('ul');
-worksList.classList = 'works-list';
-postTextBox.appendChild(worksList);
+postTextBox.appendChild(buildBadgeList(featured.badges, 'works-list'));
 
-let li = document.createElement('li');
-li.innerText = projectData[0].badge1;
-worksList.appendChild(li);
-li = document.createElement('li');
-li.innerText = projectData[0].badge2;
-worksList.appendChild(li);
-li = document.createElement('li');
-li.innerText = projectData[0].badge3;
-worksList.appendChild(li);
-li = document.createElement('li');
-li.innerText = projectData[0].badge4;
-worksList.appendChild(li);
+const featuredBtn = document.createElement('button');
+featuredBtn.classList = 'btn-sm show-pop-up';
+featuredBtn.innerHTML = 'See Project';
+featuredBtn.dataset.project = '0';
+postTextBox.appendChild(featuredBtn);
 
-let btnSmall = document.createElement('button');
-btnSmall.classList = 'btn-sm show-pop-up';
-btnSmall.innerHTML = 'See Project';
-postTextBox.appendChild(btnSmall);
-
-//
+// Project grid (remaining entries)
 
 const artPrintingContainer = document.createElement('div');
 artPrintingContainer.classList = 'art-printing-container';
 worksSection.appendChild(artPrintingContainer);
 
-for (let i = 1; i < projectData.length - 1; i += 1) {
+for (let i = 1; i < projectData.length; i += 1) {
+  const project = projectData[i];
+
   const artPrinting = document.createElement('div');
   artPrinting.classList = 'art-printing';
-  artPrinting.id = `${projectData[i].id}`;
+  artPrinting.id = `${project.id}`;
   artPrintingContainer.appendChild(artPrinting);
 
   const artPrintingInner = document.createElement('div');
@@ -157,37 +140,26 @@ for (let i = 1; i < projectData.length - 1; i += 1) {
 
   const artPrintingHeading = document.createElement('h3');
   artPrintingHeading.classList = 'art-printing-heading';
-  artPrintingHeading.innerText = projectData[i].title;
+  artPrintingHeading.innerText = project.title;
   artPrintingInner.appendChild(artPrintingHeading);
 
   const artPrintingDescription = document.createElement('p');
   artPrintingDescription.classList = 'art-printing-description';
-  artPrintingDescription.innerText = projectData[i].description;
+  artPrintingDescription.innerText = project.description;
   artPrintingInner.appendChild(artPrintingDescription);
 
-  const artPrintingList = document.createElement('ul');
-  artPrintingList.classList = 'art-printing-list';
-  artPrintingInner.appendChild(artPrintingList);
-
-  li = document.createElement('li');
-  li.innerText = projectData[i].badge1;
-  artPrintingList.appendChild(li);
-  li = document.createElement('li');
-  li.innerText = projectData[i].badge2;
-  artPrintingList.appendChild(li);
-  li = document.createElement('li');
-  li.innerText = projectData[i].badge3;
-  artPrintingList.appendChild(li);
+  artPrintingInner.appendChild(buildBadgeList(project.badges, 'art-printing-list'));
 
   const btnLarge = document.createElement('button');
   btnLarge.classList = 'btn-lg show-pop-up';
   btnLarge.innerHTML = 'See Project';
+  btnLarge.dataset.project = `${i}`;
   artPrinting.appendChild(btnLarge);
 }
 
-// pop up section
+// Pop up section (built once, populated with the clicked project's details)
 
-let popUp = document.createElement('div');
+const popUp = document.createElement('div');
 popUp.classList = 'pop-up hidden';
 worksSection.after(popUp);
 
@@ -197,7 +169,6 @@ popUp.appendChild(headingBox);
 
 const popUpHeading = document.createElement('h2');
 popUpHeading.classList = 'pop-up-heading';
-popUpHeading.innerText = projectData[7].title;
 headingBox.appendChild(popUpHeading);
 
 const closeBtn = document.createElement('button');
@@ -213,25 +184,15 @@ closeBtn.appendChild(closeIcon);
 const languageList = document.createElement('ul');
 languageList.classList = 'language-list';
 popUp.appendChild(languageList);
-li = document.createElement('li');
-li.innerText = projectData[7].badge1;
-languageList.appendChild(li);
-li = document.createElement('li');
-li.innerText = projectData[7].badge2;
-languageList.appendChild(li);
-li = document.createElement('li');
-li.innerText = projectData[7].badge3;
-languageList.appendChild(li);
 
 const cardWorks = document.createElement('div');
 cardWorks.classList = 'card-works';
 popUp.appendChild(cardWorks);
 
-const img = document.createElement('img');
-img.classList = 'card-work-img';
-img.src = projectData[7].imageSrc;
-img.alt = 'Image of project work';
-cardWorks.appendChild(img);
+const cardImg = document.createElement('img');
+cardImg.classList = 'card-work-img';
+cardImg.alt = 'Image of project work';
+cardWorks.appendChild(cardImg);
 
 const cardWorkText = document.createElement('div');
 cardWorkText.classList = 'card-works-text';
@@ -239,35 +200,58 @@ cardWorks.appendChild(cardWorkText);
 
 const cardWorkDescription = document.createElement('p');
 cardWorkDescription.classList = 'card-works-description';
-cardWorkDescription.innerText = projectData[7].description;
 cardWorkText.appendChild(cardWorkDescription);
 
 const action = document.createElement('div');
 action.classList = 'action';
 cardWorkText.appendChild(action);
 
-btnSmall = document.createElement('button');
-btnSmall.classList = 'btn-sm';
-btnSmall.innerHTML = `<a href="${projectData[7].demoLink}">See Live <img src="img/icon-see-live.svg" alt="See Live Icon Image"/></a>`;
-action.appendChild(btnSmall);
+const liveBtn = document.createElement('button');
+liveBtn.classList = 'btn-sm';
+action.appendChild(liveBtn);
 
-btnSmall = document.createElement('button');
-btnSmall.classList = 'btn-sm';
-btnSmall.innerHTML = `<a href="${projectData[7].source}">See Source<img src="img/icon-github-see-source.svg" alt="Github Icon Image"/> </a>`;
-action.appendChild(btnSmall);
+const sourceBtn = document.createElement('button');
+sourceBtn.classList = 'btn-sm';
+action.appendChild(sourceBtn);
 
-let overlay = document.createElement('div');
+const overlay = document.createElement('div');
 overlay.classList = 'overlay hidden';
 popUp.after(overlay);
 
+// Fill the pop-up with a given project's details
+
+const populatePopUp = (project) => {
+  popUpHeading.innerText = project.title;
+
+  languageList.innerHTML = '';
+  project.badges.forEach((badge) => {
+    const li = document.createElement('li');
+    li.innerText = badge;
+    languageList.appendChild(li);
+  });
+
+  cardImg.src = project.imageSrc;
+  cardImg.alt = `${project.title} project preview`;
+  cardWorkDescription.innerText = project.description;
+
+  if (project.demoLink) {
+    liveBtn.style.display = '';
+    liveBtn.innerHTML = `<a href="${project.demoLink}" target="_blank" rel="noopener">See Live <img src="img/see-live.svg" alt="See Live Icon Image"/></a>`;
+  } else {
+    liveBtn.style.display = 'none';
+  }
+
+  sourceBtn.innerHTML = `<a href="${project.source}" target="_blank" rel="noopener">See Source <img src="img/github-see-source.svg" alt="Github Icon Image"/></a>`;
+};
+
 // Handling pop up click events
 
-popUp = document.querySelector('.pop-up');
-overlay = document.querySelector('.overlay');
 const btnClosePopUp = document.querySelector('.close-pop-up');
 const btnShowPopUp = document.querySelectorAll('.show-pop-up');
 
-const showPopUp = function open() {
+const showPopUp = function open(event) {
+  const index = Number(event.currentTarget.dataset.project);
+  populatePopUp(projectData[index]);
   popUp.classList.remove('hidden');
   overlay.classList.remove('hidden');
   document.querySelector('.fixed').style.position = 'relative';
@@ -279,8 +263,8 @@ const closePopUp = function close() {
   document.querySelector('.fixed').style.position = 'fixed';
 };
 
-for (let i = 0; i < btnShowPopUp.length; i += 1) {
-  btnShowPopUp[i].addEventListener('click', showPopUp);
-  btnClosePopUp.addEventListener('click', closePopUp);
-  overlay.addEventListener('click', closePopUp);
-}
+btnShowPopUp.forEach((btn) => {
+  btn.addEventListener('click', showPopUp);
+});
+btnClosePopUp.addEventListener('click', closePopUp);
+overlay.addEventListener('click', closePopUp);

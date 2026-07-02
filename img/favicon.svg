@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <rect width="64" height="64" rx="12" fill="#1c1a19" />
+  <text x="50%" y="50%" dy="0.35em" text-anchor="middle"
+        font-family="'Roboto', 'Inter', sans-serif" font-weight="700" font-size="30" fill="#ff6b00">TM</text>
+</svg>

@@ -31,7 +31,7 @@
 
 # 📖 My-Portfolio <a name="about-project"></a>
 
-**My-Portfolio** is a simple project. It is the first project created as part of Microverse curriculum.
+**My-Portfolio** is a responsive personal portfolio website for Thato Mongwe. It showcases recent software projects, skills and a way to get in touch, built with plain HTML, CSS and JavaScript.
 
 ## 🛠 Built With <a name="built-with"></a>
 
@@ -39,11 +39,13 @@
 
 > HTML5
 > CSS3
+> JavaScript (ES6)
 
 ### Key Features <a name="key-features"></a>
 
-- **CSS background Flexbox**
-- **Markdown syntax used**
+- **Responsive, mobile-first layout**
+- **Data-driven project cards with an interactive project pop-up**
+- **Accessible contact form with client-side email validation**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
