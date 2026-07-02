@@ -21,53 +21,43 @@ navLinks.forEach((link) => {
 
 const projectData = [
   {
-    imageSrc: 'img/post-stories.svg',
+    imageSrc: 'img/tukopamoja.png',
     title: 'Tukopamoja',
     description:
-      'A production-ready multiplayer game platform centred on live quiz experiences. Hosts create quiz templates and run sessions from a web dashboard while players join by PIN or QR code for real-time, synchronised gameplay with live leaderboards.',
+      'A live multiplayer quiz platform built for ENS Africa. Presenters host quiz battles from a web dashboard while players join by PIN or QR code for real-time, synchronised rounds with instant scoring and live leaderboards.',
     badges: ['TypeScript', 'Next.js', 'React Native', 'Supabase'],
-    demoLink: '',
+    demoLink: 'https://tukopamoja.ensafrica.com',
     source: 'https://github.com/Tarto-4/Tukopamoja',
   },
   {
-    imageSrc: 'img/desktop-1.svg',
-    title: 'PowerTrader AI',
+    imageSrc: 'img/enstore.png',
+    title: 'ENStore — Device Rollout',
     description:
-      'A fully automated crypto trading system that pairs a custom price-prediction AI with a structured, tiered dollar-cost-averaging strategy. It analyses historical price patterns across multiple timeframes to generate hands-off buy and sell signals.',
-    badges: ['Python', 'Machine Learning', 'Robinhood API'],
-    demoLink: 'https://powertrader.net',
-    source: 'https://github.com/Tarto-4/PowerTrader_AI',
+      'An internal device rollout and asset management platform for ENS Africa, secured with Microsoft (Azure AD) single sign-on. It streamlines issuing, tracking and managing staff devices across the firm.',
+    badges: ['Next.js', 'TypeScript', 'Microsoft SSO'],
+    demoLink: 'https://enstore.ensafrica.com',
+    source: '',
     id: 'bg-1',
   },
   {
-    imageSrc: 'img/desktop-2.svg',
+    imageSrc: 'img/powertrader.png',
+    title: 'PowerTrader AI',
+    description:
+      'A free, open-source, AI-powered crypto trading bot. It pairs a custom price-prediction model with a structured, tiered dollar-cost-averaging strategy to analyse price patterns across timeframes and generate hands-off buy and sell signals.',
+    badges: ['Python', 'Machine Learning', 'Trading API'],
+    demoLink: 'https://powertrader.net',
+    source: 'https://github.com/Tarto-4/PowerTrader_AI',
+    id: 'bg-2',
+  },
+  {
+    imageSrc: 'img/portfolio.png',
     title: 'Personal Portfolio',
     description:
       'This responsive portfolio website, hand-built to showcase my projects and experience. It features a mobile-first layout, an accessible contact form and an interactive project pop-up, all without a framework.',
     badges: ['HTML', 'CSS', 'JavaScript'],
     demoLink: 'https://tarto-4.github.io/',
     source: 'https://github.com/Tarto-4/Tarto-4.github.io',
-    id: 'bg-2',
-  },
-  {
-    imageSrc: 'img/desktop-3.svg',
-    title: 'Simple Interest Calculator',
-    description:
-      'A command-line tool that calculates simple interest from a principal, annual rate and time period. Built as a hands-on exercise in shell scripting, Git workflows and open-source project structure.',
-    badges: ['Shell', 'Bash', 'Git'],
-    demoLink: '',
-    source: 'https://github.com/Tarto-4/github-final-project',
     id: 'bg-3',
-  },
-  {
-    imageSrc: 'img/desktop-1.svg',
-    title: 'Low-Level Programming',
-    description:
-      'A collection of C programs exploring low-level programming concepts: pointers, memory management, data structures and how software talks to hardware. Part of the ALX Software Engineering curriculum.',
-    badges: ['C', 'Data Structures', 'Algorithms'],
-    demoLink: '',
-    source: 'https://github.com/Tarto-4/alx-low_level_programming',
-    id: 'bg-4',
   },
 ];
 
@@ -241,7 +231,12 @@ const populatePopUp = (project) => {
     liveBtn.style.display = 'none';
   }
 
-  sourceBtn.innerHTML = `<a href="${project.source}" target="_blank" rel="noopener">See Source <img src="img/github-see-source.svg" alt="Github Icon Image"/></a>`;
+  if (project.source) {
+    sourceBtn.style.display = '';
+    sourceBtn.innerHTML = `<a href="${project.source}" target="_blank" rel="noopener">See Source <img src="img/github-see-source.svg" alt="Github Icon Image"/></a>`;
+  } else {
+    sourceBtn.style.display = 'none';
+  }
 };
 
 // Handling pop up click events
